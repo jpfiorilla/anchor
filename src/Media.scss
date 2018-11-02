@@ -13,7 +13,7 @@
   @include piecewise(width, 135, 300);
   @include piecewise(height, 135, 300);
   height: auto;
-  margin: 5px;
+  margin: 8px 5px;
   cursor: pointer;
   border-radius: 20px;
   border: 2px solid grey;
@@ -26,6 +26,17 @@
   &:active .playPause {
     transform: translateY(2px);
   }
+  &:active > .playPause {
+    transform: translateX(-50%) translateY(-50%) translateY(2px);
+  }
+  .playPause {
+    color: white;
+    opacity: 0.9;
+    transition: 75ms ease;
+    @include piecewise(font-size, 48, 92);
+    @include noSelect();
+    font-weight: bold;
+  }
   > .playPause {
     position: absolute;
     z-index: 1;
@@ -33,16 +44,6 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     pointer-events: none;
-  }
-  .playPause {
-    color: white;
-    opacity: 0.9;
-    transition: 75ms ease;
-  }
-  .playPause {
-    @include piecewise(font-size, 48, 92);
-    @include noSelect();
-    font-weight: bold;
   }
 }
 
@@ -54,10 +55,6 @@
   justify-content: center;
   background-position: center !important;
   background-size: cover !important;
-}
-
-.fullscreen {
-  height: 100%;
 }
 
 .video {
@@ -75,6 +72,10 @@
     display: flex;
     align-items: center;
   }
+}
+
+.fullscreen {
+  height: 100%;
 }
 
 .fullscreenToggle {

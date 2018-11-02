@@ -23,7 +23,7 @@ export default class App extends Component {
 
   handlePlayPause = index => {
     this.setState(({ currentlyPlaying, paused }) => {
-      if (index && currentlyPlaying !== index)
+      if (index !== undefined && currentlyPlaying !== index)
         return {
           currentlyPlaying: index,
           paused: false

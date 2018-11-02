@@ -1,0 +1,39 @@
+@import '~piecewisecss';
+$globalMin: 480px;
+$globalMax: 1000px;
+
+@import './mixins';
+@import './Footer';
+@import './Media';
+
+#App {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #f9eef5;
+  animation: hueRotate infinite 40s;
+}
+
+#Header,
+#Footer {
+  position: fixed;
+  left: 0;
+  background: white;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 50;
+}
+
+#Header {
+  top: 0;
+  border-bottom: 2px solid green;
+}
+
+#Footer {
+  bottom: 0;
+  border-top: 2px solid green;
+}
